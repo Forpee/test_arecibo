@@ -1,0 +1,13 @@
+[package]
+name = "test_arecibo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nova = { git = "https://github.com/wyattbenno777/arecibo", branch = "dev", package = "arecibo" }
+
+[patch.crates-io]
+# This is needed to ensure halo2curves, which imports pasta-curves, uses the *same* traits in bn256_grumpkin
+pasta_curves = { git = "https://github.com/lurk-lab/pasta_curves", branch = "dev" }
